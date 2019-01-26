@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src='./lib/vue.js'></script> 
+    <link rel="stylesheet" href="./lib/animate.css">
+ 
+</head>
+<body>
+    <div id='app'>
+        <mycom3></mycom3> 
+    </div>
+
+    <div id='app2'>
+        <login></login>
+    </div>
+
+
+    <script> 
+     // 全局函数
+      Vue.component('mycom3', {
+          template: '<div><h3>这是使用 Vue.component 创建的组件 </h3> <span>123</span></div>'
+      })
+
+        // 创建vue实例,得到 ViewModel
+        var vm=new Vue({
+            el:'#app',
+            data:{ },
+            methods: {}
+        });
+
+        var vm2 = new Vue({
+            el:'#app2',
+            data:{},
+            methods:{},
+            filters: {},
+            directives:{},
+            components:{
+                login:{
+                    template: '<h1>这是一个私有的login组件</h1>'
+                }
+            },  // 定义实例内部私有组件
+            beforeCreate() {},
+            created() {
+                
+            },
+            beforeMount() {
+                
+            },
+            mounted() {
+                
+            },
+            beforeUpdate() {
+                
+            },
+            updated() {
+                
+            },
+        })
+
+    </script>
+</body>
+</html>

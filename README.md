@@ -1,7 +1,7 @@
 # vue
 
 # 学习vue使用
-git clone git clone git@github:username/JavaDemo.git  
+git clone git clone git@github.com:luojun2010/vue.git
 
 # 更新文件到本地
 git pull  
