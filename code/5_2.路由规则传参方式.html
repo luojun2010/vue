@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <meta name="author" content="luoqingjun" />
+    <title></title>
+    <script src="./lib/vue.js"></script>
+    <!-- 1. 安装 vue-route 路由模块 -->
+    <script src="./lib/vue-router.js"></script>
+    <link rel="stylesheet" href="./lib/bootstrap.css" />
+  </head>
+  <body>
+    <div id="app">
+       <router-link to="/login?id=123&name=zs"> 登录 </router-link>
+       <router-link to="/register"> 注册 </router-link>
+       <router-view></router-view>
+    </div>
+
+    <script>
+      var login = {
+        template:
+          "<h1> 登录=== {{ $route.query.id}} --- {{ $route.query.name }} </h1>"
+      };
+
+      var register = {
+        template: "<h1> 注册 </h1>"
+      };
+
+      var roubterObj = new VueRouter({
+        routes: [
+          //  {path : '/', commponent:login },
+          { path: "/", redirect: "/login" }, // 使用redirect 重定向
+          { path: "/login", component: login },
+          { path: "/register", component: register }
+        ],
+        linkActiveClass: "myactive"
+      });
+
+      var vm = new Vue({
+        el: "#app",
+        data: {},
+        methods: {},
+        router: roubterObj
+      });
+    </script>
+  </body>
+</html>
